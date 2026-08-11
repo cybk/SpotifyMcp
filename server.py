@@ -23,7 +23,7 @@ from typing import Literal
 
 import spotipy
 from dotenv import load_dotenv
-from mcp.server.fastmcp import FastMCP
+from mcp.server.mcpserver import MCPServer
 from spotipy.oauth2 import SpotifyOAuth
 
 load_dotenv()
@@ -66,7 +66,7 @@ def get_spotify_client() -> spotipy.Spotify:
     return spotipy.Spotify(auth_manager=auth_manager)
 
 
-mcp = FastMCP("spotify-mcp")
+mcp = MCPServer("spotify-mcp")
 
 
 def _no_active_device_message() -> str:
